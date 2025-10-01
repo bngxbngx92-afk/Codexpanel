@@ -68,6 +68,49 @@ HTML_PAGE = """<!DOCTYPE html>
             height:100%;
             z-index:-1;
         }
+
+        /* BNGX Profile Section */
+        .team-card {
+            background:rgba(255,102,204,0.1);
+            border:1px solid #ff66cc;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 0 15px #ff66cc;
+            max-width:300px;
+            margin:20px auto;
+            opacity:0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        .team-card img {
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            border:3px solid #ff66cc;
+            object-fit:cover;
+            margin-bottom:15px;
+            box-shadow:0 0 15px #ff66cc;
+        }
+        .team-card h3 { color:#ff66cc; }
+        .team-card p { margin:5px 0; }
+        .team-card a {
+            display:inline-block;
+            margin-top:10px;
+            padding:10px 20px;
+            border-radius:6px;
+            background:linear-gradient(90deg,#ff99cc,#cc66ff);
+            color:#000;
+            font-weight:bold;
+            text-decoration:none;
+            transition:0.3s;
+        }
+        .team-card a:hover { transform:scale(1.05); }
+
+        @keyframes fadeInUp {
+            0% { opacity:0; transform: translateY(20px); }
+            100% { opacity:1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -79,6 +122,19 @@ HTML_PAGE = """<!DOCTYPE html>
         <button id="sendBtn" class="btn">Add Likes</button>
         <div id="status"></div>
         <div id="result" class="result-card">هنا ستظهر النتيجة...</div>
+
+        <!-- BNGX Section -->
+        <section id="team" class="tool-section">
+            <div class="team-card">
+                <img src="{{ url_for('static', filename='images/E915864E-4C38-4EFA-96E0-E13ECA51DFEA_1755810001562.jpeg') }}" alt="BNGX Profile" />
+                <h3 class="dev-name">BNGX</h3>
+                <p class="dev-role">BNGX PANEL</p>
+                <p class="dev-description">Site creator</p>
+                <a href="https://t.me/BNGXXXX" target="_blank">
+                    💬 تواصل عبر تيليجرام
+                </a>
+            </div>
+        </section>
     </div>
 
 <script>
@@ -151,7 +207,6 @@ function drawMatrix() {
         drops[i]++;
     }
 }
-
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 setInterval(drawMatrix, 50);
