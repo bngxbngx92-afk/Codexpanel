@@ -12,7 +12,7 @@ HTML_PAGE = """<!DOCTYPE html>
     <style>
         body {
             background:#0d0d0d;
-            color:#00ff99;
+            color:#ff66cc; /* النص زهري */
             font-family:monospace;
             text-align:center;
             margin:0;
@@ -24,23 +24,23 @@ HTML_PAGE = """<!DOCTYPE html>
             padding:20px;
             background:rgba(0,0,0,0.7);
             border-radius:10px;
-            box-shadow: 0 0 20px #00ff99;
+            box-shadow: 0 0 20px #ff66cc;
         }
         .input-field {
             width:100%;
             padding:10px;
             margin:10px 0;
             border-radius:6px;
-            border:1px solid #00ff99;
+            border:1px solid #ff66cc;
             background:#111;
-            color:#00ff99;
+            color:#ff66cc;
             font-size:16px;
         }
         .btn {
             padding:10px 20px;
             border:none;
             border-radius:6px;
-            background:linear-gradient(90deg,#ff00ff,#00ffff);
+            background:linear-gradient(90deg,#ff99cc,#cc66ff);
             color:#000;
             font-weight:bold;
             cursor:pointer;
@@ -52,14 +52,14 @@ HTML_PAGE = """<!DOCTYPE html>
         .result-card {
             margin-top:20px;
             text-align:right;
-            background: linear-gradient(145deg, rgba(0,255,153,0.2), rgba(0,255,153,0.05));
-            border: 1px solid #00ff99;
+            background: linear-gradient(145deg, rgba(255,102,204,0.2), rgba(255,102,204,0.05));
+            border: 1px solid #ff66cc;
             padding: 15px;
             border-radius:10px;
-            color: #caffd6;
-            box-shadow: 0 0 10px #00ff99 inset, 0 0 20px #00ff99;
+            color: #ffd6f0;
+            box-shadow: 0 0 10px #ff66cc inset, 0 0 20px #ff66cc;
         }
-        .result-key { color:#00ffc1; font-weight:bold; }
+        .result-key { color:#ff99ff; font-weight:bold; }
         .matrix-canvas {
             position: fixed;
             top:0;
@@ -125,10 +125,10 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
     }
 });
 
-// Matrix Rain
+// 💖 Matrix Rain قلوب نازلة
 const canvas = document.getElementById('matrix-canvas');
 const ctx = canvas.getContext('2d');
-let width, height, fontSize=16, columns, drops;
+let width, height, fontSize=20, columns, drops;
 
 function resizeCanvas() {
     width = window.innerWidth;
@@ -144,14 +144,14 @@ function drawMatrix() {
     ctx.fillRect(0,0,width,height);
     ctx.font = fontSize + "px monospace";
     for(let i=0;i<drops.length;i++){
-        const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*';
-        const text = charset.charAt(Math.floor(Math.random()*charset.length));
-        ctx.fillStyle = '#00ff99';
+        const text = "💖"; // قلب
+        ctx.fillStyle = '#ff66cc'; // زهري متوهج
         ctx.fillText(text, i*fontSize, drops[i]*fontSize);
         if(drops[i]*fontSize>height && Math.random()>0.975) drops[i]=0;
         drops[i]++;
     }
 }
+
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 setInterval(drawMatrix, 50);
