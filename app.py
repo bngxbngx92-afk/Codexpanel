@@ -126,11 +126,11 @@ HTML_PAGE = """<!DOCTYPE html>
         <!-- BNGX Section -->
         <section id="team" class="tool-section">
             <div class="team-card">
-                <img src="{{ url_for('static', filename='images/E915864E-4C38-4EFA-96E0-E13ECA51DFEA_1755810001562.jpeg') }}" alt="BNGX Profile" />
+                <img src="{{ url_for('static', filename='images/IMG_2108.jpeg') }}" alt="BNGX Profile" />
                 <h3 class="dev-name">BNGX</h3>
                 <p class="dev-role">BNGX PANEL</p>
                 <p class="dev-description">Site creator</p>
-                <a href="https://t.me/BNGXXXX" target="_blank">
+                <a href="https://t.me/Gooo1235" target="_blank">
                     💬 تواصل عبر تيليجرام
                 </a>
             </div>
