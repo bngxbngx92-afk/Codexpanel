@@ -34,7 +34,7 @@ ddos_tracker = defaultdict(lambda: defaultdict(int))
 suspicious_ips = defaultdict(list)
 lock = threading.Lock()
 
-ADMIN_CREDENTIALS = {"ahmad": "ahmad_admin"}
+ADMIN_CREDENTIALS = {"7ama": "7ama_admin"}
 
 # --- Helper Functions ---
 def get_client_ip():
