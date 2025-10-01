@@ -210,7 +210,7 @@ def create_account():
     try:
         # الحصول على التوكن
         token_res = requests.get(
-            f"https://jwt-three-weld.vercel.app/api/oauth_guest?uid={uid}&password={password}",
+            f"https://jwt-lac.vercel.app/api/oauth_guest?uid={uid}&password={password}",
             timeout=5
         ).json()
         token = token_res.get('token')
@@ -267,14 +267,14 @@ def add_friend():
 
     try:
         token = requests.get(
-            f"https://jwt-three-weld.vercel.app/api/oauth_guest?uid={uid}&password={password}",
+            f"https://jwt-lac.vercel.app/api/oauth_guest?uid={uid}&password={password}",
             timeout=5
         ).json().get('token')
 
         if not token:
             return jsonify({"success": False, "message": "فشل في الحصول على التوكن"}), 500
 
-        add_url = f"https://add-friend-liard.vercel.app/add_friend?token={token}&uid={friend_uid}"
+        add_url = f"https://add-friend-sable.vercel.app/add_friend?token={token}&uid={friend_uid}"
         add_data = requests.get(add_url, timeout=5).json()
 
         if add_data.get('status') == 'success':
